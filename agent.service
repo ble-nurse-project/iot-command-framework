@@ -1,0 +1,12 @@
+[Unit]
+Description=Agent Script
+
+[Service]
+Type=idle
+EnvironmentFile=/etc/agent.conf
+ExecStart=/usr/bin/python /home/pi/raspberry-controller/agent.py $AGENT_OPTS
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
